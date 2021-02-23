@@ -1,0 +1,19 @@
+.detail {
+  font-weight: bold;
+}
+
+#statement {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
