@@ -45,17 +45,19 @@
 			main.appendChild(this.btn);
 		}
 		
-		btnFnc() {
+		async btnFnc() {
 			deleteMain();
 			new LoadingPage(new BasicPage());
-	
-			fetch(URL)
-				.then((response) => response.json())
-				.then((json) => {
-					const questions = json.results;
-					deleteMain();
-					new Question(new BasicPage(), questions);
-			});
+
+			try {
+				const response = await fetch(URL);
+				const json = await response.json();
+				const questions = json.results;
+				deleteMain();
+				new Question(new BasicPage(), questions);
+			} catch (e) {
+				console.error(e);
+			}
 		}
 	}
 
